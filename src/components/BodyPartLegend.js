@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BodyPartLegend = ({ scores }) => {
+const BodyPartLegend = ({ scores, threshold }) => {
   const bodyParts = {
     nose: 0.9980533123016357,
     leftEye: 0.9954335689544678,
@@ -20,7 +20,7 @@ const BodyPartLegend = ({ scores }) => {
   }
 
   const getBodyPart = (score) => {
-    const threshold = props.threshold || 0.0
+    const thresholdVal = parseFloat(threshold / 100) || 0.0
 
     if (Array.isArray(score)) {
       return score.map((s) => {
@@ -29,7 +29,7 @@ const BodyPartLegend = ({ scores }) => {
           const scoreDifference = Math.abs(partScore - s)
           const closestDifference = Math.abs(closestScore - s)
 
-          if (partScore >= threshold && scoreDifference <= closestDifference) {
+          if (partScore >= thresholdVal && scoreDifference <= closestDifference) {
             if (scoreDifference < closestDifference) {
               return [part]
             } else {
@@ -48,7 +48,7 @@ const BodyPartLegend = ({ scores }) => {
         const scoreDifference = Math.abs(partScore - score)
         const closestDifference = Math.abs(closestScore - score)
 
-        if (partScore >= threshold && scoreDifference <= closestDifference) {
+        if (partScore >= thresholdVal && scoreDifference <= closestDifference) {
           if (scoreDifference < closestDifference) {
             return part
           } else {

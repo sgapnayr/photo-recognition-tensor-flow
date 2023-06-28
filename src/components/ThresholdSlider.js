@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
 
-const Slider = ({ value, min, max, step, onChange }) => {
-  const [threshold, setThreshold] = useState()
+const Slider = ({ min, max, step, onChange }) => {
+  const [threshold, setThreshold] = useState(0)
 
   function handleSlider(event) {
     const newThreshold = event.target.value
     setThreshold(newThreshold)
-    onChange(newThreshold)
   }
 
   return (
     <div className="flex flex-col items-center justify-center">
-      Thresh Hold:
+      Thresh Hold: {threshold}
       <div className="flex gap-x-2">
         <div>0</div>
-        <input type="range" min={min} max={max} step={step} value={threshold} onChange={onChange} />
+        <input type="range" min={min} max={max} step={step} value={threshold} onChange={handleSlider} />
         <div>1</div>
       </div>
     </div>
