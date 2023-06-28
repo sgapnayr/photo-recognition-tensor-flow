@@ -16,6 +16,11 @@ function App() {
   const [playButton, setPlayButton] = useState(false)
   const [intervalId, setIntervalId] = useState(null)
   const [threshold, setThreshold] = useState(0.0)
+  const [colorsOnScreen, setColorsOnScreen] = useState([])
+
+  const handleThresholdChange = (newThreshold) => {
+    setThreshold(newThreshold)
+  }
 
   useEffect(() => {
     let net
@@ -64,7 +69,27 @@ function App() {
 
       const colorBodyPart = bodypix.toColoredPartMask(person)
 
-      bodypix.drawMask(canvasRef.current, video, colorBodyPart, 0.7, 0, false)
+      // Convert colored part mask to TensorFlow tensor
+      const colorTensor = tf.browser.fromPixels(colorBodyPart)
+
+      // Extract the colors from the tensor
+      const colors = colorTensor.arraySync()
+
+      // Place colors on set, filter colors so no repeating
+      const uniqueColors = new Set()
+
+      colors.forEach((row) => {
+        row.forEach((color) => {
+          uniqueColors.add(color.join(', '))
+        })
+      })
+
+      // Convert set to array and update state
+      const uniqueColorsArray = Array.from(uniqueColors)
+      setColorsOnScreen(uniqueColorsArray)
+
+      // Draw canvas
+      bodypix.drawMask(canvasRef.current, video, colorBodyPart, 1, 0, false)
 
       setBodyParts(person.allPoses?.map((pose) => pose.score))
 
@@ -77,12 +102,18 @@ function App() {
       <Header />
       <div className="App bg-gray-100 min-h-screen flex flex-col justify-start items-center">
         <div className="flex w-full justify-start items-center flex-col relative my-8 h-[480px]">
-          <canvas ref={canvasRef} className="aspect-w-16 aspect-h-9 absolute z-0 invisible rounded-[16px]" />
+          <canvas ref={canvasRef} className="aspect-w-16 aspect-h-9 invisible rounded-[16px]" />
           <Webcam ref={webcamRef} className="aspect-w-16 aspect-h-9 absolute -z-0 rounded-[16px] drop-shadow-md" />
         </div>
         <ThresholdSlider threshold={threshold} setThreshold={setThreshold} />
         <StartStopButton playButton={playButton} setPlayButton={setPlayButton} />
-        <BodyPartLegend scores={bodyParts} threshold={threshold} setThreshold={setThreshold} />
+        <BodyPartLegend
+          colorsOnScreen={colorsOnScreen}
+          scores={bodyParts}
+          threshold={threshold}
+          setThreshold={setThreshold}
+          onThresholdChange={handleThresholdChange}
+        />
       </div>
     </>
   )

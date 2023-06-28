@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const BodyPartLegend = ({ scores, threshold }) => {
+const BodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }) => {
   const bodyParts = {
     nose: 0.9980533123016357,
     leftEye: 0.9954335689544678,
@@ -19,48 +19,19 @@ const BodyPartLegend = ({ scores, threshold }) => {
     rightKnee: 0.007620042993515253,
   }
 
-  const getBodyPart = (score) => {
-    const thresholdVal = parseFloat(threshold / 100) || 0.0
-
-    if (Array.isArray(score)) {
-      return score.map((s) => {
-        const matchingParts = Object.entries(bodyParts).reduce((closestParts, [part, partScore]) => {
-          const closestScore = bodyParts[closestParts[0]] || 0
-          const scoreDifference = Math.abs(partScore - s)
-          const closestDifference = Math.abs(closestScore - s)
-
-          if (partScore >= thresholdVal && scoreDifference <= closestDifference) {
-            if (scoreDifference < closestDifference) {
-              return [part]
-            } else {
-              return closestParts.concat(part)
-            }
-          }
-
-          return closestParts
-        }, [])
-
-        return matchingParts.length > 0 ? toTitleCase(matchingParts.join(', ')) : 'Unknown'
-      })
-    } else {
-      const matchingPart = Object.entries(bodyParts).reduce((closestPart, [part, partScore]) => {
-        const closestScore = bodyParts[closestPart] || 0
-        const scoreDifference = Math.abs(partScore - score)
-        const closestDifference = Math.abs(closestScore - score)
-
-        if (partScore >= thresholdVal && scoreDifference <= closestDifference) {
-          if (scoreDifference < closestDifference) {
-            return part
-          } else {
-            return closestPart + ', ' + part
-          }
-        }
-
-        return closestPart
-      }, '')
-
-      return matchingPart ? toTitleCase(matchingPart) : 'Unknown'
-    }
+  const bodyPartByColor = {
+    rightElbow: [255, 140, 56],
+    rightEar: [143, 61, 178],
+    leftEar: [110, 64, 170],
+    rightWrist: [194, 219, 64],
+    leftWrist: [217, 193, 49],
+    rightShoulder: [255, 78, 125],
+    leftShoulder: [210, 62, 167],
+    chestTorso: [175, 240, 91],
+    rightArm: [239, 166, 46],
+    rightOuterArm: [255, 140, 56],
+    leftArm: [255, 115, 75],
+    leftOuterArm: [255, 94, 99],
   }
 
   const toTitleCase = (str) => {
@@ -68,11 +39,39 @@ const BodyPartLegend = ({ scores, threshold }) => {
       .toLowerCase()
       .split(' ')
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
   }
 
-  const bodyPart = scores.map((score, idx) => {
-    return <div key={idx}>{getBodyPart(score)}</div>
+  const getBodyPart = (color) => {
+    const matchingParts = Object.entries(bodyPartByColor).reduce((parts, [part, partColor]) => {
+      const colorString = partColor.join(', ')
+      if (colorString === color) {
+        parts.push(part)
+      }
+      return parts
+    }, [])
+
+    if (matchingParts.length > 0) {
+      return matchingParts.map((part, idx) => <div key={idx}>{toTitleCase(part)}</div>)
+    } else {
+      return null
+    }
+  }
+
+  const bodyPart = colorsOnScreen.map((color, idx) => {
+    const parts = getBodyPart(color)
+    if (parts) {
+      return <div key={idx}>{parts}</div>
+    }
+    return null
   })
+
+  useEffect(() => {
+    // Call the provided onThresholdChange callback whenever the threshold prop changes
+    if (typeof onThresholdChange === 'function') {
+      onThresholdChange(threshold)
+    }
+  }, [threshold, onThresholdChange])
 
   return (
     <div className="flex flex-col text-center">
