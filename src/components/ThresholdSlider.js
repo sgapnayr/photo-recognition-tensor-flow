@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 const Slider = ({ value, min, max, step, onChange }) => {
   const [threshold, setThreshold] = useState()
 
-  function handleSlider(slider) {
-    setThreshold(slider.event.target)
+  function handleSlider(event) {
+    const newThreshold = event.target.value
+    setThreshold(newThreshold)
+    onChange(newThreshold)
   }
 
   return (

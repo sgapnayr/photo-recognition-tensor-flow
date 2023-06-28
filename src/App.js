@@ -6,7 +6,7 @@ import * as tf from '@tensorflow/tfjs'
 import * as bodypix from '@tensorflow-models/body-pix'
 import Webcam from 'react-webcam'
 import BodyPartLegend from './components/BodyPartLegend'
-import Slider from './components/ThresholdSlider'
+import ThresholdSlider from './components/ThresholdSlider'
 import StartStopButton from './components/StartStopButton'
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   const [bodyParts, setBodyParts] = useState([])
   const [playButton, setPlayButton] = useState(false)
   const [intervalId, setIntervalId] = useState(null)
+  const [threshold, setThreshold] = useState(0.0)
 
   useEffect(() => {
     let net
@@ -79,9 +80,9 @@ function App() {
           <canvas ref={canvasRef} className="aspect-w-16 aspect-h-9 absolute z-0 invisible rounded-[16px]" />
           <Webcam ref={webcamRef} className="aspect-w-16 aspect-h-9 absolute -z-0 rounded-[16px] drop-shadow-md" />
         </div>
-        <Slider />
+        <ThresholdSlider threshold={threshold} setThreshold={setThreshold} />
         <StartStopButton playButton={playButton} setPlayButton={setPlayButton} />
-        <BodyPartLegend scores={bodyParts} />
+        <BodyPartLegend scores={bodyParts} threshold={threshold} setThreshold={setThreshold} />
       </div>
     </>
   )

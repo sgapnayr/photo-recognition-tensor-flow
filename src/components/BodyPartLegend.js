@@ -20,7 +20,7 @@ const BodyPartLegend = ({ scores }) => {
   }
 
   const getBodyPart = (score) => {
-    const threshold = 0.0
+    const threshold = props.threshold || 0.0
 
     if (Array.isArray(score)) {
       return score.map((s) => {
