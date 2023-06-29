@@ -20,6 +20,7 @@ const SpinnerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  scale: 1.5;
 `
 
 const spinningAnimation = keyframes`

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }) => {
+const BaseBodyPartLegend = ({ colorsOnScreen, scores = '0.0', threshold, onThresholdChange }) => {
   const bodyPartByColor = {
     rightElbow: [255, 140, 56],
     rightEar: [143, 61, 178],
@@ -65,8 +65,8 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
 
   return (
     <div className="flex flex-col text-center">
-      <p className="opacity-20">{scores}</p>
-      <h3 className="text-lg font-semibold opacity-50">Body Parts in WebCam: </h3>
+      <p className="opacity-20">Confidence: ~{scores * 100}%</p>
+      <h3 className="text-lg font-bold underline opacity-50">Body Parts Seen on WebCam</h3>
       <div className="font-[700] text-xl drop-shadow-sm">{bodyPart}</div>
     </div>
   )

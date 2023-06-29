@@ -8,7 +8,7 @@ export default function PageLive() {
   const [bodyParts, setBodyParts] = useState([])
   const [playButton, setPlayButton] = useState(false)
   const [colorsOnScreen, setColorsOnScreen] = useState([])
-  const [threshold, setThreshold] = useState(0.0)
+  const [threshold, setThreshold] = useState(50)
   const [letLoad, setLetLoad] = useState(false)
 
   const handleThresholdChange = (newThreshold) => {
@@ -25,7 +25,7 @@ export default function PageLive() {
   return (
     <div className="App bg-gray-100 min-h-screen flex flex-col justify-start items-center">
       <BaseWebCam playButton={playButton} setColorsOnScreen={setColorsOnScreen} setBodyParts={setBodyParts} letLoad={letLoad} />
-      <BaseThresholdSlider />
+      <BaseThresholdSlider threshold={threshold} setThreshold={setThreshold} />
       <BaseStartStopButton playButton={playButton} setPlayButton={setPlayButton} />
       <BaseBodyPartLegend colorsOnScreen={colorsOnScreen} scores={bodyParts} threshold={threshold} setThreshold={setThreshold} onThresholdChange={handleThresholdChange} />
     </div>
