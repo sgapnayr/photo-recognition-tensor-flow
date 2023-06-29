@@ -10,7 +10,7 @@ export default function BaseModeSelector({ setLiveOrUploadMode, liveOrUploadMode
             liveOrUploadMode === 'Live' ? 'relative opacity-100' : 'hover:opacity-50 opacity-75'
           }`}
         >
-          {liveOrUploadMode === 'Live' && <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />}
+          {liveOrUploadMode === 'Live' && <div className="absolute left-0 right-0 bottom-0 h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />}
           Live
         </div>
         <div
@@ -19,7 +19,7 @@ export default function BaseModeSelector({ setLiveOrUploadMode, liveOrUploadMode
             liveOrUploadMode === 'About' ? 'relative opacity-100' : 'hover:opacity-50 opacity-75'
           }`}
         >
-          {liveOrUploadMode === 'About' && <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />}
+          {liveOrUploadMode === 'About' && <div className="absolute left-0 right-0 bottom-0 h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />}
           About
         </div>
       </div>
