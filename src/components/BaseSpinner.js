@@ -14,7 +14,7 @@ const SpinnerContainer = styled.div`
   height: 220px;
   position: absolute;
   width: 100%;
-  z-index: 50;
+  z-index: 1;
   background-color: #your-bg-color; /* Replace with your desired background color */
   left: 0;
   display: flex;

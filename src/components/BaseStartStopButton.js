@@ -23,7 +23,7 @@ export default function StartStopButton({ playButton, setPlayButton, bodyParts }
     <div
       onClick={() => setPlayButton(!playButton)}
       className={`${
-        playButton ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'
+        playButton ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'
       } text-white font-bold py-2 px-4 rounded w-[300px] active:scale-90 transition cursor-pointer text-center my-4 shadow-md ${showLoader ? 'bg-gray-500' : ''}`}
     >
       {showLoader && (
@@ -34,7 +34,7 @@ export default function StartStopButton({ playButton, setPlayButton, bodyParts }
           <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
         </div>
       )}
-      {!showLoader && <span> {playButton ? 'Pause' : 'Start'}</span>}
+      {!showLoader && <span> {playButton ? 'Pause' : 'Analyze'}</span>}
     </div>
   )
 }
