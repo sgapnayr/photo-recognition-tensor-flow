@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { Slider } from '@material-tailwind/react'
 
-const Slider = ({ threshold, setThreshold, min, max, step, onChange, playButton }) => {
+const BaseSlider = ({ threshold, setThreshold, min, max, step, onChange, playButton }) => {
   function handleSlider(event) {
     const newThreshold = event.target.value
     setThreshold(newThreshold)
@@ -39,7 +40,9 @@ const Slider = ({ threshold, setThreshold, min, max, step, onChange, playButton 
         <div style={getLabelStyle('Least')} className="font-bold">
           Least
         </div>
-        <input type="range" min={min} max={max} step={step} value={threshold} onChange={handleSlider} />
+        <div className="w-96 flex mt-1">
+          <Slider defaultValue={threshold} value={threshold} onChange={handleSlider} />
+        </div>
         <div style={getLabelStyle('Most')} className="font-bold">
           Most
         </div>
@@ -48,4 +51,4 @@ const Slider = ({ threshold, setThreshold, min, max, step, onChange, playButton 
   )
 }
 
-export default Slider
+export default BaseSlider
