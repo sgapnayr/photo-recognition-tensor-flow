@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const ResultDisplay = ({ results }) => {
   return (
@@ -11,7 +11,7 @@ const ResultDisplay = ({ results }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default ResultDisplay;
+export default ResultDisplay

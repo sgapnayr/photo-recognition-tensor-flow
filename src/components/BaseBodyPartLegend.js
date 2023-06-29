@@ -1,24 +1,6 @@
 import React, { useEffect } from 'react'
 
-const BodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }) => {
-  const bodyParts = {
-    nose: 0.9980533123016357,
-    leftEye: 0.9954335689544678,
-    rightEye: 0.9995456337928772,
-    leftEar: 0.33361077308654785,
-    rightEar: 0.9880875945091248,
-    leftShoulder: 0.9914394617080688,
-    rightShoulder: 0.9823103547096252,
-    leftElbow: 0.27302297949790955,
-    rightElbow: 0.13327018916606903,
-    leftWrist: 0.023343998938798904,
-    rightWrist: 0.0351378433406353,
-    leftHip: 0.009763401933014393,
-    rightHip: 0.0023434110917150974,
-    leftKnee: 0.008708992972970009,
-    rightKnee: 0.007620042993515253,
-  }
-
+const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }) => {
   const bodyPartByColor = {
     rightElbow: [255, 140, 56],
     rightEar: [143, 61, 178],
@@ -32,11 +14,19 @@ const BodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }
     rightOuterArm: [255, 140, 56],
     leftArm: [255, 115, 75],
     leftOuterArm: [255, 94, 99],
+    rightCalf: [33, 176, 213],
+    rightShin: [47, 150, 224],
+    rightFoot: [84, 101, 214],
+    rightThigh: [96, 247, 96],
+    leftCalf: [64, 125, 224],
+    leftShin: [27, 198, 193],
+    leftFoot: [194, 219, 64],
+    leftThigh: [40, 234, 141],
   }
 
   const toTitleCase = (str) => {
     return str
-      .toLowerCase()
+      .replace(/([a-z])([A-Z])/g, '$1 $2') // Add a space between lowercase and uppercase letters
       .split(' ')
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ')
@@ -82,4 +72,4 @@ const BodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }
   )
 }
 
-export default BodyPartLegend
+export default BaseBodyPartLegend

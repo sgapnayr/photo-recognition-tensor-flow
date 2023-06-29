@@ -1,0 +1,33 @@
+.spinner {
+  @keyframes spin_1.5s_linear_infinite {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  --spin-duration: 1.5s;
+
+  display: inline-block;
+  height: 4rem;
+  width: 4rem;
+  animation: spin_1.5s_linear_infinite var(--spin-duration) linear infinite;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  align-self: -0.125em;
+  position: absolute;
+}
+
+.spinner span {
+  position: absolute;
+  margin: -1px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+}
