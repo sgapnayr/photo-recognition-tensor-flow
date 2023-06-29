@@ -11,13 +11,13 @@ function App() {
   const [modalOpen, setModalOpen] = useState(true)
 
   return (
-    <>
+    <div className="bg-gray-100">
       <BaseHeader />
       <BaseModal currentStep={currentStep} setCurrentStep={setCurrentStep} modalOpen={modalOpen} setModalOpen={setModalOpen} />
       {currentStep >= 3 && !modalOpen && <BaseModeSelector setLiveOrUploadMode={setLiveOrUploadMode} liveOrUploadMode={liveOrUploadMode} />}
       {liveOrUploadMode === 'Live' && <PageLive liveOrUploadMode={liveOrUploadMode} />}
       {liveOrUploadMode === 'About' && <PageAbout />}
-    </>
+    </div>
   )
 }
 

@@ -19,7 +19,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
           >
             <div className="w-[90%] max-w-md md:max-w-[60%] bg-gray-100 rounded-xl p-4 transition-all shadow-xl top-1/4 absolute">
               <DialogHeader className="text-3xl font-bold text-center text-gray-800">
-                <div className="flex flex-col justify-center items-center w-full bg-gradient-to-r from-blue-500 to-purple-500 py-4 drop-shadow-md">
+                <div className="flex flex-col justify-center items-center w-full bg-gradient-to-r from-blue-500 to-purple-500 py-4 drop-shadow-md px-8">
                   <h1 className="text-white text-3xl text-center font-semibold italic">Real-Time Body Part Recognition:</h1>
                 </div>
               </DialogHeader>
