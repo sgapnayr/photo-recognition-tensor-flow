@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export default function StartStopButton({ playButton, setPlayButton }) {
+export default function StartStopButton({ playButton, setPlayButton, bodyParts }) {
   const [showLoader, setShowLoader] = useState(false)
 
   useEffect(() => {
@@ -8,7 +8,9 @@ export default function StartStopButton({ playButton, setPlayButton }) {
       setShowLoader(true)
 
       const timer = setTimeout(() => {
-        setShowLoader(false)
+        if (bodyParts) {
+          setShowLoader(false)
+        }
       }, 1000)
 
       return () => {

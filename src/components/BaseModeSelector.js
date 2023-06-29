@@ -6,15 +6,19 @@ export default function BaseModeSelector({ setLiveOrUploadMode, liveOrUploadMode
       <div className="flex items-center justify-center bg-gray-100 pt-2">
         <div
           onClick={() => setLiveOrUploadMode('Live')}
-          className={`px-6 py-2 border-2 border-y-2 cursor-pointer hover:opacity-50 ${liveOrUploadMode === 'Live' ? 'bg-blue-500 text-white' : 'bg-white'}`}
+          className={`px-6 py-2 border-2 border-y-2 cursor-pointer font-semibold rounded-l-xl ${
+            liveOrUploadMode === 'Live' ? 'bg-blue-500 text-white shadow-md' : 'bg-white hover:opacity-50'
+          }`}
         >
           Live
         </div>
         <div
-          onClick={() => setLiveOrUploadMode('Upload')}
-          className={`px-6 py-2 border-r-2 border-y-2 cursor-pointer hover:opacity-50 ${liveOrUploadMode === 'Upload' ? 'bg-blue-500 text-white' : 'bg-white'}`}
+          onClick={() => setLiveOrUploadMode('About')}
+          className={`px-6 py-2 border-r-2 border-y-2 cursor-pointer font-semibold rounded-r-xl ${
+            liveOrUploadMode === 'About' ? 'bg-blue-500 text-white shadow-md' : 'bg-white hover:opacity-50'
+          }`}
         >
-          Upload
+          About
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
-const BaseBodyPartLegend = ({ colorsOnScreen, scores = '0.0', threshold, onThresholdChange }) => {
+const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }) => {
+  const [Confidence, setConfidence] = useState()
+
   const bodyPartByColor = {
     rightElbow: [255, 140, 56],
     rightEar: [143, 61, 178],
@@ -48,6 +50,17 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores = '0.0', threshold, onThres
     }
   }
 
+  const calculateConfidence = () => {
+    const recognizedParts = colorsOnScreen.reduce((count, color, idx) => {
+      const part = getBodyPart(color)
+      return count + (part ? 1 : 0)
+    }, 0)
+
+    const totalParts = colorsOnScreen.length
+    const calculatedConfidence = Math.round((recognizedParts / totalParts) * 100)
+    setConfidence(calculatedConfidence * (threshold / 100))
+  }
+
   const bodyPart = colorsOnScreen.map((color, idx) => {
     const parts = getBodyPart(color)
     if (parts) {
@@ -61,12 +74,15 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores = '0.0', threshold, onThres
     if (typeof onThresholdChange === 'function') {
       onThresholdChange(threshold)
     }
-  }, [threshold, onThresholdChange])
+
+    // Calculate confidence when colorsOnScreen or scores change
+    calculateConfidence()
+  }, [threshold, onThresholdChange, colorsOnScreen, scores])
 
   return (
-    <div className="flex flex-col text-center">
-      <p className="opacity-20">Confidence: ~{scores * 100}%</p>
-      <h3 className="text-lg font-bold underline opacity-50">Body Parts Seen on WebCam</h3>
+    <div className="flex flex-col text-center items-center">
+      <p className="opacity-20">Confidence: ~{Confidence === 0 ? '<1' : Confidence}%</p>
+      <h3 className="text-xl font-bold opacity-50">Body Parts</h3>
       <div className="font-[700] text-xl drop-shadow-sm">{bodyPart}</div>
     </div>
   )

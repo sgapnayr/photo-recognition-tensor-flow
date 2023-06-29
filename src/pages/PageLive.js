@@ -4,7 +4,7 @@ import BaseStartStopButton from '../components/BaseStartStopButton'
 import BaseWebCam from '../components/BaseWebCam'
 import BaseThresholdSlider from '../components/BaseThresholdSlider'
 
-export default function PageLive() {
+export default function PageLive({ liveOrUploadMode }) {
   const [bodyParts, setBodyParts] = useState([])
   const [playButton, setPlayButton] = useState(false)
   const [colorsOnScreen, setColorsOnScreen] = useState([])
@@ -26,7 +26,7 @@ export default function PageLive() {
     <div className="App bg-gray-100 min-h-screen flex flex-col justify-start items-center">
       <BaseWebCam playButton={playButton} setColorsOnScreen={setColorsOnScreen} setBodyParts={setBodyParts} letLoad={letLoad} />
       <BaseThresholdSlider threshold={threshold} setThreshold={setThreshold} />
-      <BaseStartStopButton playButton={playButton} setPlayButton={setPlayButton} />
+      <BaseStartStopButton playButton={playButton} setPlayButton={setPlayButton} bodyParts={bodyParts} />
       <BaseBodyPartLegend colorsOnScreen={colorsOnScreen} scores={bodyParts} threshold={threshold} setThreshold={setThreshold} onThresholdChange={handleThresholdChange} />
     </div>
   )
