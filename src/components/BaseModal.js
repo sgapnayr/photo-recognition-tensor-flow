@@ -2,18 +2,16 @@ import { useState } from 'react'
 import { Button, Dialog, DialogHeader, DialogBody, DialogFooter } from '@material-tailwind/react'
 import BaseHeader from './BaseHeader'
 
-export default function Example() {
-  const [open, setOpen] = useState(true)
-  const [currentStep, setCurrentStep] = useState(1)
+export default function Example({ currentStep, setCurrentStep, modalOpen, setModalOpen }) {
   const totalSteps = 3
 
-  const handleOpen = () => setOpen(!open)
+  const handleOpen = () => setModalOpen(!modalOpen)
   const handleNextStep = () => setCurrentStep(currentStep + 1)
   const handlePrevStep = () => setCurrentStep(currentStep - 1)
 
   return (
     <>
-      {open && (
+      {modalOpen && (
         <div className="flex justify-center items-center h-screen">
           <div
             onClick={currentStep === totalSteps ? handleOpen : handleNextStep}
