@@ -23,7 +23,9 @@ export default function StartStopButton({ playButton, setPlayButton, bodyParts }
     <div
       onClick={() => setPlayButton(!playButton)}
       className={`${
-        playButton ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'
+        playButton
+          ? 'bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600'
+          : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600'
       } text-white font-bold py-2 px-4 rounded w-[300px] active:scale-90 transition cursor-pointer text-center my-4 shadow-md ${showLoader ? 'bg-gray-500' : ''}`}
     >
       {showLoader && (

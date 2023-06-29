@@ -17,9 +17,9 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
             onClick={currentStep === totalSteps ? handleOpen : handleNextStep}
             className="fixed top-0 left-0 w-full h-full bg-gray-700 bg-opacity-50 flex justify-center items-center z-50"
           >
-            <div className="w-[90%] max-w-md md:max-w-[60%] bg-gray-100 rounded-xl p-4 transition-all shadow-xl">
+            <div className="w-[90%] max-w-md md:max-w-[60%] bg-gray-100 rounded-xl p-4 transition-all shadow-xl top-1/4 absolute">
               <DialogHeader className="text-3xl font-bold text-center text-gray-800">
-                <div className="flex flex-col justify-center items-center w-full bg-blue-500 py-4 drop-shadow-md">
+                <div className="flex flex-col justify-center items-center w-full bg-gradient-to-r from-blue-500 to-purple-500 py-4 drop-shadow-md">
                   <h1 className="text-white text-3xl text-center font-semibold italic">Real-Time Body Part Recognition:</h1>
                 </div>
               </DialogHeader>
@@ -86,13 +86,13 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                   </Button>
                 )}
                 {currentStep < totalSteps && (
-                  <Button variant="text" onClick={handleNextStep} className="text-blue-500 text-lg">
-                    <span>Next</span>
+                  <Button variant="text" onClick={handleNextStep} className="text-lg">
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Next</span>
                   </Button>
                 )}
                 {currentStep === totalSteps && (
-                  <Button variant="text" onClick={handleOpen} className="text-blue-500 text-lg">
-                    <span>Go to App</span>
+                  <Button variant="text" onClick={handleOpen} className="text-lg">
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Go to App</span>
                   </Button>
                 )}
               </DialogFooter>

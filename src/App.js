@@ -13,10 +13,14 @@ function App() {
   return (
     <>
       <BaseHeader />
-      {currentStep >= 3 && !modalOpen && <BaseModeSelector setLiveOrUploadMode={setLiveOrUploadMode} liveOrUploadMode={liveOrUploadMode} />}
       <BaseModal currentStep={currentStep} setCurrentStep={setCurrentStep} modalOpen={modalOpen} setModalOpen={setModalOpen} />
-      {liveOrUploadMode === 'Live' && <PageLive liveOrUploadMode={liveOrUploadMode} />}
-      {liveOrUploadMode === 'About' && <PageAbout />}
+      {currentStep >= 3 && !modalOpen && (
+        <>
+          <BaseModeSelector setLiveOrUploadMode={setLiveOrUploadMode} liveOrUploadMode={liveOrUploadMode} />
+          {liveOrUploadMode === 'Live' && <PageLive liveOrUploadMode={liveOrUploadMode} />}
+          {liveOrUploadMode === 'About' && <PageAbout />}
+        </>
+      )}
     </>
   )
 }
