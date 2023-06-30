@@ -16,8 +16,8 @@ const BaseSlider = ({ threshold, setThreshold, min, max, step, onChange, playBut
     if (label === 'Medium') {
       return {
         background: playButton ? 'linear-gradient(to right, #FF8300, #FFD700)' : 'linear-gradient(to right, #4F46E5, #8C1BAB)',
-        '--webkit-background-clip': 'text',
-        '--webkit-text-fill-color': 'transparent',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
       }
     }
     if (label === 'Most') {
@@ -41,7 +41,7 @@ const BaseSlider = ({ threshold, setThreshold, min, max, step, onChange, playBut
           Least
         </div>
         <div className="w-48 flex mt-2">
-          <Slider size="lg" defaultValue={threshold} value={threshold} onChange={handleSlider} />
+          <Slider size="lg" value={threshold} onChange={handleSlider} />
         </div>
         <div style={getLabelStyle('Most')} className="font-bold text-lg">
           Most

@@ -32,7 +32,7 @@ export default function StartStopButton({ playButton, setPlayButton, bodyParts }
     >
       {showLoader && (
         <div
-          className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-white border-r-transparent align-middle motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          className="inline-block h-7 w-7 animate-spin rounded-full border-4 border-solid border-white border-r-transparent align-middle motion-reduce:animate-[spin_1.5s_linear_infinite]"
           role="status"
         >
           <span className="sr-only">Loading...</span>
