@@ -88,8 +88,8 @@ export default function BaseWebCam({ playButton, setColorsOnScreen, setBodyParts
   return (
     <div className="flex rounded-xl justify-start items-center flex-col relative overflow-hidden my-4">
       {letLoad && <BaseSpinner />}
-      <canvas ref={canvasRef} className={`w-full mx-4 invisible rounded-xl scale-90 drop-shadow-lg sm:scale-100 ${letLoad ? 'invisble' : ''}`} />
-      <Webcam ref={webcamRef} className={`w-full mx-4 absolute rounded-xl scale-90 drop-shadow-lg sm:scale-100 ${letLoad ? 'invisble opacity-40 animate-pulse' : ''}`} />
+      <canvas ref={canvasRef} className={`w-full mx-4 grow invisible rounded-xl scale-90 drop-shadow-lg sm:scale-100 ${letLoad ? 'invisble' : ''}`} />
+      <Webcam ref={webcamRef} className={`w-full mx-4 grow  absolute rounded-xl scale-90 drop-shadow-lg sm:scale-100 ${letLoad ? 'invisble opacity-40 animate-pulse' : ''}`} />
     </div>
   )
 }
