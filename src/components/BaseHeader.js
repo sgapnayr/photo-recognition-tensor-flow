@@ -2,7 +2,7 @@ import React from 'react'
 
 const BaseHeader = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full py-4 bg-gray-100">
+    <div className="flex flex-col justify-center items-center w-full py-8 bg-gray-100">
       <h1 className="text-3xl text-center font-semibold italic">
         <span
           className="text-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"

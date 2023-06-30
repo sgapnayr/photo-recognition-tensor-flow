@@ -40,8 +40,8 @@ const BaseSlider = ({ threshold, setThreshold, min, max, step, onChange, playBut
         <div style={getLabelStyle('Least')} className="font-bold">
           Least
         </div>
-        <div className="w-96 flex mt-1">
-          <Slider defaultValue={threshold} value={threshold} onChange={handleSlider} />
+        <div className="w-36 flex mt-1">
+          <Slider size="lg" defaultValue={threshold} value={threshold} onChange={handleSlider} />
         </div>
         <div style={getLabelStyle('Most')} className="font-bold">
           Most
