@@ -20,7 +20,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
               currentStep === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
             }`}
           >
-            <div className="w-[95%] max-w-[960px] md:max-w-[720px] bg-gray-100 rounded-xl p-4 transition-all shadow-xl top-2 md:top-1/4 absolute overflow-scroll">
+            <div className="w-[85%] max-w-[960px] md:max-w-[720px] bg-gray-100 rounded-xl p-4 transition-all shadow-xl top-8 md:top-1/4 absolute overflow-scroll">
               <DialogHeader className="text-2xl font-bold text-center text-gray-800">
                 <div className="flex flex-col justify-center items-center w-full">
                   <h1 className="text-3xl text-center font-semibold italic">
