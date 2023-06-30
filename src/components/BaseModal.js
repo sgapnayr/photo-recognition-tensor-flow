@@ -69,10 +69,10 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                     <p className="text-lg">The application consists of the following key components:</p>
                     <ul className="list-disc ml-4 text-gray-700 text-lg">
                       <li>
-                        <strong>Webcam Integration:</strong> Captures live video feed to analyze and detect body parts.
+                        <strong>Confidence Calculation:</strong> Determines confidence levels of recognized body parts based on matching scores and user-defined threshold.
                       </li>
                       <li>
-                        <strong>Color Matching and Detection:</strong> Identifies body parts by comparing video feed colors with predefined profiles.
+                        <strong>Threshold Adjustment:</strong> Allows users to customize the recognition threshold for sensitivity control.
                       </li>
                     </ul>
                   </>
