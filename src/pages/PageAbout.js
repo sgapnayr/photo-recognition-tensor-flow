@@ -7,9 +7,9 @@ export default function PageAbout() {
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Introduction</h2>
           <p className="text-gray-700 text-lg">
-            The Body Part Recognition Application is a cutting-edge software solution that utilizes Tensorflow, React, and other advanced technologies to analyze and identify
-            various body parts shown on a webcam. This application leverages machine learning algorithms and computer vision techniques to provide real-time feedback on the
-            detected body parts, their confidence levels, and the ability to adjust the recognition threshold.
+            The Body Part Recognition Application is a cutting-edge software solution that utilizes Tensorflow, React, Stripe, and other advanced technologies to analyze and
+            identify various body parts shown on a webcam. This application leverages machine learning algorithms, computer vision techniques, and Stripe integration to provide
+            real-time feedback on the detected body parts, their confidence levels, and the ability to adjust the recognition threshold.
           </p>
         </div>
 
@@ -53,12 +53,15 @@ export default function PageAbout() {
               interactive interface, allowing users to view and interact with the detected body parts, adjust the threshold, and visualize the confidence levels.
             </li>
             <li>
+              <strong>Stripe:</strong> Stripe, a payment processing platform, is integrated into the application to handle secure and seamless payment transactions.
+            </li>
+            <li>
               <strong>Computer Vision:</strong> Computer vision techniques, including color matching and detection algorithms, are employed to identify body parts from the video
               feed. These algorithms leverage image processing and pattern recognition to analyze the color composition and spatial relationships within the video frames.
             </li>
           </ul>
         </div>
-        {/* Deployment with AWS Amplify */}
+
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Deployment with AWS Amplify</h2>
           <p className="text-gray-700 text-lg">
@@ -69,14 +72,14 @@ export default function PageAbout() {
           </p>
         </div>
 
-        {/* Conclusion */}
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Conclusion</h2>
           <p className="text-gray-700 text-lg">
-            The Body Part Recognition Application demonstrates the power and potential of combining machine learning, computer vision, and user-friendly interfaces to create
-            innovative solutions. By accurately detecting and recognizing body parts from a live webcam feed, this application opens up possibilities in fields such as fitness
-            tracking, gesture recognition, and virtual reality. With its advanced technologies and customizable threshold, the application offers users a reliable tool to analyze
-            and monitor body movements in real-time, providing valuable insights and enhancing various applications across industries.
+            The Body Part Recognition Application demonstrates the power and potential of combining machine learning, computer vision, payment processing, and user-friendly
+            interfaces to create innovative solutions. By accurately detecting and recognizing body parts from a live webcam feed and integrating secure payment transactions, this
+            application opens up possibilities in fields such as fitness tracking, gesture recognition, and virtual reality. With its advanced technologies and customizable
+            threshold, the application offers users a reliable tool to analyze and monitor body movements in real-time, providing valuable insights and enhancing various
+            applications across industries.
           </p>
         </div>
 
@@ -93,6 +96,11 @@ export default function PageAbout() {
             <li>
               <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
                 React
+              </a>
+            </li>
+            <li>
+              <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">
+                Stripe
               </a>
             </li>
             <li>

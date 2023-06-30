@@ -12,7 +12,6 @@ function App() {
   const [liveOrUploadMode, setLiveOrUploadMode] = useState('App')
   const [currentStep, setCurrentStep] = useState(1)
   const [modalOpen, setModalOpen] = useState(true)
-
   return (
     <div className="bg-gradient-to-b from-gray-100 to-gray-200">
       <div className="fixed top-0 left-0 w-full h-12 bg-gradient-to-b from-gray-100 to-transparent"></div>

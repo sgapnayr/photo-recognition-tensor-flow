@@ -81,6 +81,9 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                         <strong>React:</strong> JavaScript library for building interactive interfaces to view and interact with detected body parts.
                       </li>
                       <li>
+                        <strong>Stripe:</strong> Payment processing integration for donations.
+                      </li>
+                      <li>
                         <strong>Computer Vision:</strong> Employs algorithms to identify body parts from the video feed.
                       </li>
                     </ul>
