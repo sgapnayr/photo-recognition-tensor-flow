@@ -7,7 +7,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
 
   const handleOpen = () => setModalOpen(!modalOpen)
   const handleNextStep = () => setCurrentStep(currentStep + 1)
-  const handlePrevStep = () => setCurrentStep(currentStep - 1)
+  const handleSkipToApp = () => setCurrentStep(totalSteps)
 
   return (
     <>
@@ -19,8 +19,25 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
           >
             <div className="w-[95%] max-w-[960px] md:max-w-[720px] bg-gray-100 rounded-xl p-4 transition-all shadow-xl top-2 md:top-1/4 absolute overflow-scroll">
               <DialogHeader className="text-2xl font-bold text-center text-gray-800">
-                <div className="flex flex-col justify-center items-center w-full bg-gradient-to-r from-blue-500 to-purple-500 py-4 drop-shadow-md px-8">
-                  <h1 className="text-white text-2xl text-center font-semibold italic">Real-Time Body Part Recognition:</h1>
+                <div className="flex flex-col justify-center items-center w-full">
+                  <h1 className="text-3xl text-center font-semibold italic">
+                    <span
+                      className="text-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+                      style={{
+                        backgroundClip: 'text',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundSize: '200% 200%',
+                        animation: 'gradientAnimation 5s ease infinite',
+                      }}
+                    >
+                      Real-Time Body Part Recognition:
+                    </span>
+                  </h1>
+                  <br />
+                  <span className="text-gray-800 text-xl font-light pb-2 -mt-4 whitespace-pre" style={{ opacity: 0.8 }}>
+                    Advancing Human-Computer Interaction
+                  </span>
                 </div>
               </DialogHeader>
               <DialogBody divider className="text-gray-700">
@@ -33,24 +50,22 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                     </p>
                   </>
                 )}
-
                 {currentStep === 2 && (
                   <>
                     <h2 className="text-xl font-bold text-gray-800">Components</h2>
-                    <p className="text-lg">The application consists of key components:</p>
+                    <p className="text-lg">The application consists of the following key components:</p>
                     <ul className="list-disc ml-4 text-gray-700 text-lg">
                       <li>
-                        <strong>Webcam Integration:</strong> Interfaces with the user's webcam, capturing live video feed for analysis and detection of body parts.
+                        <strong>Webcam Integration:</strong> Captures live video feed to analyze and detect body parts.
                       </li>
                       <li>
-                        <strong>Color Matching and Detection:</strong> Compares video feed colors with predefined color profiles to identify potential matches and determine the
-                        corresponding body parts.
+                        <strong>Color Matching and Detection:</strong> Identifies body parts by comparing video feed colors with predefined profiles.
                       </li>
                       <li>
-                        <strong>Confidence Calculation:</strong> Calculates confidence levels of recognized body parts based on matching scores and user-defined threshold.
+                        <strong>Confidence Calculation:</strong> Determines confidence levels of recognized body parts based on matching scores and user-defined threshold.
                       </li>
                       <li>
-                        <strong>Threshold Adjustment:</strong> Allows users to customize the recognition threshold to control sensitivity of the system.
+                        <strong>Threshold Adjustment:</strong> Allows users to customize the recognition threshold for sensitivity control.
                       </li>
                     </ul>
                   </>
@@ -62,16 +77,13 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                     <p className="text-lg">The Body Part Recognition Application utilizes state-of-the-art technologies including:</p>
                     <ul className="list-disc ml-4 text-gray-700 text-lg">
                       <li>
-                        <strong>Tensorflow:</strong> Open-source machine learning framework for efficient training and deployment of deep neural networks for real-time analysis of
-                        webcam video feed.
+                        <strong>Tensorflow:</strong> Open-source machine learning framework for real-time analysis of webcam video feed.
                       </li>
                       <li>
-                        <strong>React:</strong> JavaScript library for building user interfaces, providing a responsive and interactive interface to view and interact with detected
-                        body parts.
+                        <strong>React:</strong> JavaScript library for building interactive interfaces to view and interact with detected body parts.
                       </li>
                       <li>
-                        <strong>Computer Vision:</strong> Employs computer vision techniques including color matching and detection algorithms to identify body parts from the video
-                        feed.
+                        <strong>Computer Vision:</strong> Employs algorithms to identify body parts from the video feed.
                       </li>
                     </ul>
                   </>
@@ -79,20 +91,15 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
 
                 {/* Rest of the content */}
               </DialogBody>
-              <DialogFooter className="flex justify-between w-full">
-                {currentStep > 1 && (
-                  <Button variant="text" onClick={handlePrevStep} className="text-gray-700 text-lg">
-                    <span>Previous</span>
-                  </Button>
-                )}
+              <DialogFooter className="flex justify-end w-full">
                 {currentStep < totalSteps && (
                   <Button variant="text" onClick={handleNextStep} className="text-lg">
                     <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Next</span>
                   </Button>
                 )}
                 {currentStep === totalSteps && (
-                  <Button variant="text" onClick={handleOpen} className="text-lg">
-                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Go to App</span>
+                  <Button variant="text" onClick={handleSkipToApp} className="text-lg">
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Skip to App</span>
                   </Button>
                 )}
               </DialogFooter>

@@ -58,7 +58,18 @@ export default function PageAbout() {
             </li>
           </ul>
         </div>
+        {/* Deployment with AWS Amplify */}
+        <div className="mt-6">
+          <h2 className="text-3xl font-bold text-gray-800">Deployment with AWS Amplify</h2>
+          <p className="text-gray-700 text-lg">
+            The Body Part Recognition Application is deployed using AWS Amplify, a comprehensive development platform that simplifies the process of building and deploying
+            full-stack applications. By leveraging AWS Amplify, the deployment process becomes more efficient and streamlined. AWS Amplify allows for seamless integration with
+            version control systems like Git and repositories such as GitHub. This enables continuous integration and deployment, ensuring that the application is automatically
+            built and deployed whenever changes are made to the source code.
+          </p>
+        </div>
 
+        {/* Conclusion */}
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Conclusion</h2>
           <p className="text-gray-700 text-lg">
