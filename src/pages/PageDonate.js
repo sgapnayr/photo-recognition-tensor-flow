@@ -23,6 +23,14 @@ function CheckoutForm() {
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
+      billing_details: {
+        name: event.target.name.value,
+        email: event.target.email.value,
+        address: {
+          line1: event.target.address.value,
+          // Add more address fields if necessary (e.g., line2, city, state, postal_code)
+        },
+      },
     })
 
     if (error) {
@@ -40,6 +48,21 @@ function CheckoutForm() {
       <div className="w-[90%] md:w-[720px] flex justify-center items-center flex-col bg-white shadow-md rounded-md mt-4 p-8">
         <div className="border-b">
           <h2 className="text-3xl font-bold text-gray-700 pb-8 text-center italic">Stripe Secure Checkout</h2>
+          {/* <div className="flex flex-col space-y-4">
+            <label htmlFor="name" className="text-gray-600">
+              Name:
+            </label>
+            <input type="text" id="name" className="border border-gray-300 rounded-md p-2" required />
+            <label htmlFor="address" className="text-gray-600">
+              Address:
+            </label>
+            <input type="text" id="address" className="border border-gray-300 rounded-md p-2" required />
+            <label htmlFor="email" className="text-gray-600">
+              Email:
+            </label>
+            <input type="email" id="email" className="border border-gray-300 rounded-md p-2" required />
+          </div> */}
+
           <CardElement
             options={{
               style: {
