@@ -81,9 +81,9 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
 
   return (
     <div className="flex flex-col text-center items-center">
-      <p className="opacity-20">Confidence: ~{Confidence === 0 ? '<1' : Confidence}%</p>
-      <h3 className="text-xl font-bold opacity-50">Body Parts</h3>
-      <div className="font-[700] text-xl drop-shadow-sm">{bodyPart}</div>
+      <p className="opacity-20 text-2xl">Confidence: ~{Confidence === 0 ? '<1' : Confidence}%</p>
+      <h3 className="text-2xl font-bold opacity-50">Body Parts</h3>
+      <div className="font-[700] text-2xl drop-shadow-sm">{bodyPart}</div>
     </div>
   )
 }
