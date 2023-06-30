@@ -1,27 +1,34 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
+export default function BaseSpinner() {
+  return (
+    <SpinnerContainer>
+      <div className="relative flex justify-center items-center">{Spinner()}</div>
+    </SpinnerContainer>
+  )
+}
+
 const Spinner = () => (
-  <SpinnerContainer>
+  <>
     <SpinnerInnerInner />
     <SpinnerInner />
     <SpinnerOuter />
     <SpinnerOuterOuter />
-  </SpinnerContainer>
+  </>
 )
 
 const SpinnerContainer = styled.div`
-  height: 260px;
+  flex-grow: 1;
   position: absolute;
   width: 100%;
   z-index: 1;
-  background-color: #your-bg-color; /* Replace with your desired background color */
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   scale: 1.5;
-  background-image: linear-gradient(to right, #your-gradient-color-1, #your-gradient-color-2); /* Replace with your desired gradient colors */
+  background-image: linear-gradient(to right, #your-gradient-color-1, #your-gradient-color-2);
 `
 
 const spinningAnimation = keyframes`
@@ -65,7 +72,7 @@ const SpinnerOuter = styled.div`
   border-right-color: transparent;
   border-radius: 9999px;
   position: absolute;
-  background-image: linear-gradient(to right, rgb(168 85 247), #your-to-color); /* Replace with your desired gradient colors */
+  background-image: linear-gradient(to right, rgb(168 85 247), #your-to-color);
   background-clip: padding-box;
 `
 
@@ -79,5 +86,3 @@ const SpinnerOuterOuter = styled.div`
   border-radius: 9999px;
   position: absolute;
 `
-
-export default Spinner
