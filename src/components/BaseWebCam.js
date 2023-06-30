@@ -76,7 +76,7 @@ export default function BaseWebCam({ playButton, setColorsOnScreen, setBodyParts
     if (playButton) {
       const newIntervalId = setInterval(() => {
         detect()
-      }, 100)
+      }, 200)
 
       setIntervalId(newIntervalId)
     } else {
