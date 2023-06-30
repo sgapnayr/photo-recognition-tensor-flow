@@ -15,7 +15,9 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
         <div className="flex justify-center items-center h-screen">
           <div
             onClick={currentStep === totalSteps ? handleOpen : handleNextStep}
-            className="fixed top-0 left-0 w-full h-full bg-gray-700 bg-opacity-50 flex justify-center items-center z-50 overflow-scroll pb-4"
+            className={`fixed top-0 left-0 w-full h-full bg-gray-700 bg-opacity-50 flex justify-center items-center z-50 overflow-scroll pb-4 transition-opacity ${
+              currentStep === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+            }`}
           >
             <div className="w-[95%] max-w-[960px] md:max-w-[720px] bg-gray-100 rounded-xl p-4 transition-all shadow-xl top-2 md:top-1/4 absolute overflow-scroll">
               <DialogHeader className="text-2xl font-bold text-center text-gray-800">
@@ -36,7 +38,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                   </h1>
                 </div>
               </DialogHeader>
-              <DialogBody divider className="text-gray-700">
+              <DialogBody divider className={`text-gray-700 ${currentStep === 0 ? 'hidden' : 'block'}`}>
                 {currentStep === 1 && (
                   <>
                     <h2 className="text-xl font-bold text-gray-800">Introduction</h2>

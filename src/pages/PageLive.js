@@ -26,7 +26,7 @@ export default function PageLive({ liveOrUploadMode }) {
     <div className="App min-h-screen flex flex-col justify-start items-center">
       <BaseWebCam playButton={playButton} setColorsOnScreen={setColorsOnScreen} setBodyParts={setBodyParts} letLoad={letLoad} />
       <BaseThresholdSlider threshold={threshold} setThreshold={setThreshold} />
-      <BaseStartStopButton playButton={playButton} setPlayButton={setPlayButton} bodyParts={bodyParts} />
+      <BaseStartStopButton playButton={playButton} setPlayButton={setPlayButton} bodyParts={bodyParts} letLoad={letLoad} />
       <BaseBodyPartLegend colorsOnScreen={colorsOnScreen} scores={bodyParts} threshold={threshold} setThreshold={setThreshold} onThresholdChange={handleThresholdChange} />
     </div>
   )
