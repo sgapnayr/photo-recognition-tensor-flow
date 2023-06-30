@@ -18,7 +18,7 @@ const BaseHeader = () => {
         </span>
       </h1>
       <br />
-      <span className="text-gray-800 text-2xl font-light pb-2 -mt-4 whitespace-pre" style={{ opacity: 0.8 }}>
+      <span className="text-gray-800 text-xl font-light pb-2 -mt-4 whitespace-pre" style={{ opacity: 0.8 }}>
         Advancing Human-Computer Interaction
       </span>
     </div>
