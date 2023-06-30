@@ -6,7 +6,7 @@ import PageAbout from './pages/PageAbout'
 import BaseModal from './components/BaseModal'
 
 function App() {
-  const [liveOrUploadMode, setLiveOrUploadMode] = useState('Live')
+  const [liveOrUploadMode, setLiveOrUploadMode] = useState('App')
   const [currentStep, setCurrentStep] = useState(1)
   const [modalOpen, setModalOpen] = useState(true)
 
