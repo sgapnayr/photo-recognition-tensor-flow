@@ -21,7 +21,7 @@ function App() {
       {currentStep >= 3 && !modalOpen && <BaseModeSelector setLiveOrUploadMode={setLiveOrUploadMode} liveOrUploadMode={liveOrUploadMode} />}
       {liveOrUploadMode === 'App' && <PageLive liveOrUploadMode={liveOrUploadMode} />}
       {liveOrUploadMode === 'Donate' && <PageElement />}
-      {liveOrUploadMode === 'Tech Used' && <PageAbout />}
+      {liveOrUploadMode === 'Tech' && <PageAbout />}
       {liveOrUploadMode === 'Upload' && <PageUpload />}
       <div className="fixed bottom-0 left-0 w-full h-12 bg-gradient-to-t from-gray-100 to-transparent"></div>
     </div>
