@@ -24,6 +24,7 @@ function App() {
       {liveOrUploadMode === 'Tech' && <PageAbout />}
       {liveOrUploadMode === 'Upload' && <PageUpload />}
       <BaseFooter />
+      <div className="fixed bottom-0 left-0 w-full h-12 bg-gradient-to-b from-gray-100 to-transparent rotate-180"></div>
     </div>
   )
 }
