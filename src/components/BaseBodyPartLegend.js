@@ -129,7 +129,7 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
 
   return (
     <div className="flex flex-col text-center items-center w-full">
-      <p className="opacity-20 text-2xl w-full">Confidence: ~{Confidence === 0 ? '<1' : Confidence}%</p>
+      <p className="opacity-20 text-2xl w-full">Confidence: ~{Confidence === 0 ? '<1' : Confidence?.toFixed(3)}%</p>
       <h3 className="text-2xl font-bold opacity-50">Body Parts</h3>
       <div className="font-[700] text-xl drop-shadow-sm w-full whitespace-nowrap flex justify-center items-center flex-col">{bodyPart}</div>
     </div>
