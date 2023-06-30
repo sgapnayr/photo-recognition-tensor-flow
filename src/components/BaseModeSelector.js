@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function BaseModeSelector({ setLiveOrUploadMode, liveOrUploadMode }) {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center -mt-4">
       <div className="flex items-center justify-center text-lg py-4">
         <div
           onClick={() => setLiveOrUploadMode('App')}
