@@ -31,7 +31,7 @@ export default function PageLive({ liveOrUploadMode }) {
   return (
     <div className="App min-h-screen flex flex-col justify-start items-center">
       <div className="relative w-full flex justify-center items-center flex-col -mt-2">
-        {webCamVisible ? (
+        {!webCamVisible ? (
           <AiOutlineEyeInvisible className="text-2xl cursor-pointer opacity-50" onClick={toggleWebCamVisibility} />
         ) : (
           <AiOutlineEye className="text-2xl cursor-pointer opacity-50" onClick={toggleWebCamVisibility} />
