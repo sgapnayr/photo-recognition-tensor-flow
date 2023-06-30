@@ -3,10 +3,11 @@ import { Button, Dialog, DialogHeader, DialogBody, DialogFooter } from '@materia
 import BaseHeader from './BaseHeader'
 
 export default function Example({ currentStep, setCurrentStep, modalOpen, setModalOpen }) {
-  const totalSteps = 3
+  const totalSteps = 5
 
   const handleOpen = () => setModalOpen(!modalOpen)
   const handleNextStep = () => setCurrentStep(currentStep + 1)
+  const handlePrevStep = () => setCurrentStep(currentStep - 1)
   const handleSkipToApp = () => setCurrentStep(totalSteps)
 
   return (
@@ -59,17 +60,24 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                       <li>
                         <strong>Color Matching and Detection:</strong> Identifies body parts by comparing video feed colors with predefined profiles.
                       </li>
+                    </ul>
+                  </>
+                )}
+                {currentStep === 3 && (
+                  <>
+                    <h2 className="text-xl font-bold text-gray-800">Components</h2>
+                    <p className="text-lg">The application consists of the following key components:</p>
+                    <ul className="list-disc ml-4 text-gray-700 text-lg">
                       <li>
-                        <strong>Confidence Calculation:</strong> Determines confidence levels of recognized body parts based on matching scores and user-defined threshold.
+                        <strong>Webcam Integration:</strong> Captures live video feed to analyze and detect body parts.
                       </li>
                       <li>
-                        <strong>Threshold Adjustment:</strong> Allows users to customize the recognition threshold for sensitivity control.
+                        <strong>Color Matching and Detection:</strong> Identifies body parts by comparing video feed colors with predefined profiles.
                       </li>
                     </ul>
                   </>
                 )}
-
-                {currentStep === 3 && (
+                {currentStep === 4 && (
                   <>
                     <h2 className="text-xl font-bold text-gray-800">Technologies Used</h2>
                     <p className="text-lg">The Body Part Recognition Application utilizes state-of-the-art technologies including:</p>
@@ -80,6 +88,14 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                       <li>
                         <strong>React:</strong> JavaScript library for building interactive interfaces to view and interact with detected body parts.
                       </li>
+                    </ul>
+                  </>
+                )}
+                {currentStep === 5 && (
+                  <>
+                    <h2 className="text-xl font-bold text-gray-800">Technologies Used</h2>
+                    <p className="text-lg">The Body Part Recognition Application utilizes state-of-the-art technologies including:</p>
+                    <ul className="list-disc ml-4 text-gray-700 text-lg">
                       <li>
                         <strong>Stripe:</strong> Payment processing integration for donations.
                       </li>
@@ -89,10 +105,13 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                     </ul>
                   </>
                 )}
-
-                {/* Rest of the content */}
               </DialogBody>
-              <DialogFooter className="flex justify-end w-full">
+              <DialogFooter className="flex justify-between w-full">
+                {currentStep > 1 && (
+                  <Button variant="text" onClick={handlePrevStep} className="text-lg">
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Previous</span>
+                  </Button>
+                )}
                 {currentStep < totalSteps && (
                   <Button variant="text" onClick={handleNextStep} className="text-lg">
                     <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Next</span>
