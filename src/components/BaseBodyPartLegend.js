@@ -72,7 +72,7 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
         backgroundColor: `rgb(${color})`,
       }
       return (
-        <div className="bg-white my-1 px-2 py-2 rounded-xl flex items-center justify-between w-[380px] whitespace-nowrap" key={idx}>
+        <div className="bg-white my-1 px-2 py-2 rounded-xl flex items-center justify-between w-[92.5%] max-w-[450px] whitespace-nowrap" key={idx}>
           <div className="flex items-center">
             <div className="flex mr-1">
               {icon ? <icon size={24} /> : <RiUser3Fill size={24} />} {/* Render the icon */}
