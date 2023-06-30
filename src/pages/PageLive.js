@@ -11,7 +11,7 @@ export default function PageLive({ liveOrUploadMode }) {
   const [colorsOnScreen, setColorsOnScreen] = useState([])
   const [threshold, setThreshold] = useState(50)
   const [letLoad, setLetLoad] = useState(false)
-  const [webCamVisible, setWebCamVisible] = useState(true)
+  const [webCamVisible, setWebCamVisible] = useState(false)
 
   const handleThresholdChange = (newThreshold) => {
     setThreshold(newThreshold)
@@ -31,7 +31,7 @@ export default function PageLive({ liveOrUploadMode }) {
   return (
     <div className="App min-h-screen flex flex-col justify-start items-center">
       <div className="relative w-full flex justify-center items-center flex-col -mt-2">
-        {!webCamVisible ? (
+        {webCamVisible ? (
           <AiOutlineEyeInvisible className="text-2xl cursor-pointer opacity-50" onClick={toggleWebCamVisibility} />
         ) : (
           <AiOutlineEye className="text-2xl cursor-pointer opacity-50" onClick={toggleWebCamVisibility} />
