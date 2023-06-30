@@ -11,7 +11,7 @@ export default function PageLive({ liveOrUploadMode }) {
   const [colorsOnScreen, setColorsOnScreen] = useState([])
   const [threshold, setThreshold] = useState(50)
   const [letLoad, setLetLoad] = useState(false)
-  const [webCamVisible, setWebCamVisible] = useState(false)
+  const [webCamVisible, setWebCamVisible] = useState(true)
 
   const handleThresholdChange = (newThreshold) => {
     setThreshold(newThreshold)
