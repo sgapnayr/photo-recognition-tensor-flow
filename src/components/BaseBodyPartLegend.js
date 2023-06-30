@@ -72,7 +72,7 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
         backgroundColor: `rgb(${color})`,
       }
       return (
-        <div className="bg-white my-2 px-2 py-2 rounded-xl flex items-center justify-between w-[380px] whitespace-nowrap" key={idx}>
+        <div className="bg-white my-1 px-2 py-2 rounded-xl flex items-center justify-between w-[380px] whitespace-nowrap" key={idx}>
           <div className="flex items-center">
             <div className="flex mr-1">
               {icon ? <icon size={24} /> : <RiUser3Fill size={24} />} {/* Render the icon */}
@@ -128,10 +128,10 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
   }, [threshold, onThresholdChange, colorsOnScreen, scores])
 
   return (
-    <div className="flex flex-col text-center items-center">
-      <p className="opacity-20 text-2xl">Confidence: ~{Confidence === 0 ? '<1' : Confidence}%</p>
+    <div className="flex flex-col text-center items-center w-full">
+      <p className="opacity-20 text-2xl w-full">Confidence: ~{Confidence === 0 ? '<1' : Confidence}%</p>
       <h3 className="text-2xl font-bold opacity-50">Body Parts</h3>
-      <div className="font-[700] text-xl drop-shadow-sm w-full whitespace-nowrap">{bodyPart}</div>
+      <div className="font-[700] text-xl drop-shadow-sm w-full whitespace-nowrap flex justify-center items-center flex-col">{bodyPart}</div>
     </div>
   )
 }
