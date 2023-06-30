@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PageAbout() {
   return (
-    <div className="App bg-gray-100 min-h-screen flex flex-col justify-start items-center px-4 pb-16">
+    <div className="App min-h-screen flex flex-col justify-start items-center px-4 pb-16">
       <div className="container">
         <h1 className="text-3xl font-bold mt-8 mb-4 text-center text-gray-800">Body Part Recognition Application</h1>
 

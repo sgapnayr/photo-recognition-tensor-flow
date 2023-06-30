@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function BaseModeSelector({ setLiveOrUploadMode, liveOrUploadMode }) {
   return (
-    <div className="flex flex-col bg-gray-100 justify-center items-center">
-      <div className="flex items-center justify-center bg-gray-100 text-lg">
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex items-center justify-center text-lg">
         <div
           onClick={() => setLiveOrUploadMode('Live')}
           className={`px-6 py-2 cursor-pointer font-semibold rounded-l-xl transition-opacity duration-300 text-gray-800 ${

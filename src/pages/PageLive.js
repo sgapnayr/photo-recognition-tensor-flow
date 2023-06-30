@@ -23,7 +23,7 @@ export default function PageLive({ liveOrUploadMode }) {
   }, [])
 
   return (
-    <div className="App bg-gray-100 min-h-screen flex flex-col justify-start items-center">
+    <div className="App min-h-screen flex flex-col justify-start items-center">
       <BaseWebCam playButton={playButton} setColorsOnScreen={setColorsOnScreen} setBodyParts={setBodyParts} letLoad={letLoad} />
       <BaseThresholdSlider threshold={threshold} setThreshold={setThreshold} />
       <BaseStartStopButton playButton={playButton} setPlayButton={setPlayButton} bodyParts={bodyParts} />

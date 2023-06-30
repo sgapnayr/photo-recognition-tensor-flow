@@ -11,7 +11,7 @@ function App() {
   const [modalOpen, setModalOpen] = useState(true)
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gradient-to-b from-gray-100 to-gray-200">
       <BaseHeader />
       <BaseModal currentStep={currentStep} setCurrentStep={setCurrentStep} modalOpen={modalOpen} setModalOpen={setModalOpen} />
       {currentStep >= 3 && !modalOpen && <BaseModeSelector setLiveOrUploadMode={setLiveOrUploadMode} liveOrUploadMode={liveOrUploadMode} />}
