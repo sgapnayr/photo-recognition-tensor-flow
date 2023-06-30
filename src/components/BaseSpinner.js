@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 export default function BaseSpinner() {
   return (
     <div className="relative flex justify-center items-center">
-      <div className="md:h-[405px] h-[216px] flex justify-center items-center">{Spinner()}</div>
+      <div className="md:h-[405px] h-[216px] flex justify-center items-center scale-150">{Spinner()}</div>
     </div>
   )
 }
