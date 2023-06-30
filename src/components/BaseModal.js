@@ -106,7 +106,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                   </>
                 )}
               </DialogBody>
-              <DialogFooter className="flex justify-between w-full">
+              <DialogFooter className="flex justify-end w-full">
                 {currentStep < totalSteps && (
                   <Button variant="text" onClick={handleNextStep} className="text-lg">
                     <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Next</span>
@@ -114,7 +114,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                 )}
                 {currentStep === totalSteps && (
                   <Button variant="text" onClick={handleSkipToApp} className="text-lg">
-                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Skip to App</span>
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Go to App</span>
                   </Button>
                 )}
               </DialogFooter>
