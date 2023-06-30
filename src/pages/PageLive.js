@@ -36,7 +36,7 @@ export default function PageLive({ liveOrUploadMode }) {
         ) : (
           <AiOutlineEye className="text-2xl cursor-pointer opacity-50" onClick={toggleWebCamVisibility} />
         )}
-        {playButton && webCamVisible && <span className="opacity-50 absolute mt-8 text-sm">(Scroll down if you can't see results)</span>}
+        {playButton && webCamVisible && <span className="opacity-50 absolute mt-8 text-xs">(Scroll down if you can't see results)</span>}
       </div>
       <div className={webCamVisible ? '' : 'invisible absolute'}>
         <BaseWebCam playButton={playButton} setColorsOnScreen={setColorsOnScreen} setBodyParts={setBodyParts} letLoad={letLoad} />
