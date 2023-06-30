@@ -36,7 +36,7 @@ export default function StartStopButton({ playButton, setPlayButton, bodyParts }
           <span className="sr-only">Loading...</span>
         </div>
       )}
-      {!showLoader && <span> {playButton ? 'Pause' : 'Analyze'}</span>}
+      {!showLoader && <span className="text-xl"> {playButton ? 'Pause' : 'Analyze'}</span>}
     </div>
   )
 }
