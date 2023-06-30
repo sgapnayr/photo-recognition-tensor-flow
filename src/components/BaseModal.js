@@ -23,7 +23,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                   <h1 className="text-white text-4xl text-center font-semibold italic">Real-Time Body Part Recognition:</h1>
                 </div>
               </DialogHeader>
-              <DialogBody divider className="text-gray-500">
+              <DialogBody divider className="text-gray-700">
                 {currentStep === 1 && (
                   <>
                     <h2 className="text-3xl font-bold text-gray-800">Introduction</h2>
@@ -38,7 +38,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                   <>
                     <h2 className="text-3xl font-bold text-gray-800">Components</h2>
                     <p className="text-lg">The application consists of key components:</p>
-                    <ul className="list-disc ml-4 text-gray-500 text-lg">
+                    <ul className="list-disc ml-4 text-gray-700 text-lg">
                       <li>
                         <strong>Webcam Integration:</strong> Interfaces with the user's webcam, capturing live video feed for analysis and detection of body parts.
                       </li>
@@ -60,7 +60,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                   <>
                     <h2 className="text-3xl font-bold text-gray-800">Technologies Used</h2>
                     <p className="text-lg">The Body Part Recognition Application utilizes state-of-the-art technologies including:</p>
-                    <ul className="list-disc ml-4 text-gray-500 text-lg">
+                    <ul className="list-disc ml-4 text-gray-700 text-lg">
                       <li>
                         <strong>Tensorflow:</strong> Open-source machine learning framework for efficient training and deployment of deep neural networks for real-time analysis of
                         webcam video feed.
@@ -81,7 +81,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
               </DialogBody>
               <DialogFooter className="flex justify-between w-full">
                 {currentStep > 1 && (
-                  <Button variant="text" onClick={handlePrevStep} className="text-gray-500 text-lg">
+                  <Button variant="text" onClick={handlePrevStep} className="text-gray-700 text-lg">
                     <span>Previous</span>
                   </Button>
                 )}

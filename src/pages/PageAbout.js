@@ -8,7 +8,7 @@ export default function PageAbout() {
 
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Introduction</h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-700 text-lg">
             The Body Part Recognition Application is a cutting-edge software solution that utilizes Tensorflow, React, and other advanced technologies to analyze and identify
             various body parts shown on a webcam. This application leverages machine learning algorithms and computer vision techniques to provide real-time feedback on the
             detected body parts, their confidence levels, and the ability to adjust the recognition threshold.
@@ -17,10 +17,10 @@ export default function PageAbout() {
 
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Components</h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-700 text-lg">
             The application consists of several key components that work together to deliver a seamless and interactive body part recognition experience:
           </p>
-          <ul className="list-disc ml-8 text-gray-500 text-lg">
+          <ul className="list-disc ml-8 text-gray-700 text-lg">
             <li>
               <strong>Webcam Integration:</strong> The application interfaces with the user's webcam, capturing live video feed for analysis and detection of body parts.
             </li>
@@ -41,11 +41,11 @@ export default function PageAbout() {
 
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Technologies Used</h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-700 text-lg">
             The Body Part Recognition Application employs a combination of state-of-the-art technologies to deliver its powerful functionality and user-friendly experience. The key
             technologies used include:
           </p>
-          <ul className="list-disc ml-8 text-gray-500 text-lg">
+          <ul className="list-disc ml-8 text-gray-700 text-lg">
             <li>
               <strong>Tensorflow:</strong> Tensorflow, an open-source machine learning framework, forms the backbone of the application's body part recognition model. It enables
               efficient training and deployment of deep neural networks to perform accurate and real-time analysis of the webcam video feed.
@@ -63,7 +63,7 @@ export default function PageAbout() {
 
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Conclusion</h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-700 text-lg">
             The Body Part Recognition Application demonstrates the power and potential of combining machine learning, computer vision, and user-friendly interfaces to create
             innovative solutions. By accurately detecting and recognizing body parts from a live webcam feed, this application opens up possibilities in fields such as fitness
             tracking, gesture recognition, and virtual reality. With its advanced technologies and customizable threshold, the application offers users a reliable tool to analyze
@@ -72,10 +72,10 @@ export default function PageAbout() {
         </div>
 
         <div className="mt-6">
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-700 text-lg">
             For more information on the software and technologies used in this Body Part Recognition Application, please visit the following resources:
           </p>
-          <ul className="list-disc ml-8 text-gray-500 text-lg">
+          <ul className="list-disc ml-8 text-gray-700 text-lg">
             <li>
               <a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer">
                 Tensorflow
