@@ -4,8 +4,6 @@ export default function PageAbout() {
   return (
     <div className="App min-h-screen flex flex-col justify-start items-center px-4 pb-16">
       <div className="container">
-        <h1 className="text-4xl font-bold mt-8 mb-4 text-center text-gray-800">Body Part Recognition Application</h1>
-
         <div className="mt-6">
           <h2 className="text-3xl font-bold text-gray-800">Introduction</h2>
           <p className="text-gray-700 text-lg">
