@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
+import { RiUser3Fill, RiThumbUpFill, RiHeartFill } from 'react-icons/ri'
+import { FaThumbsUp, FaHeart } from 'react-icons/fa'
+
 const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChange }) => {
   const [Confidence, setConfidence] = useState()
 
@@ -64,10 +67,55 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
   const bodyPart = colorsOnScreen.map((color, idx) => {
     const parts = getBodyPart(color)
     if (parts) {
-      return <div key={idx}>{parts}</div>
+      const icon = getIconForBodyPart(parts[0]) // Get the appropriate icon for the body part
+      const colorStyle = {
+        backgroundColor: `rgb(${color})`,
+      }
+      return (
+        <div className="bg-white my-2 px-2 p-1 rounded-xl flex items-center justify-between w-full whitespace-nowrap" key={idx}>
+          <div className="flex items-center">
+            <div className="flex mr-1">
+              {icon ? <icon size={24} /> : <RiUser3Fill size={24} />} {/* Render the icon */}
+            </div>
+            <div className="tet-gray-500 font-[500] text-sm whitespace-nowrap text-start">{parts}</div>
+          </div>
+          <div className="body-part-color">
+            <div className="w-4 h-4 rounded-full" style={colorStyle} /> {/* Render the color circle */}
+          </div>
+        </div>
+      )
     }
     return null
   })
+
+  function getIconForBodyPart(bodyPart) {
+    // Define the mapping between body parts and icons here
+
+    const iconMap = {
+      rightElbow: RiThumbUpFill,
+      rightEar: RiUser3Fill,
+      leftEar: RiUser3Fill,
+      rightWrist: RiThumbUpFill,
+      leftWrist: RiThumbUpFill,
+      rightShoulder: RiUser3Fill,
+      leftShoulder: RiUser3Fill,
+      chestTorso: RiUser3Fill,
+      rightArm: RiUser3Fill,
+      rightOuterArm: RiUser3Fill,
+      leftArm: RiUser3Fill,
+      leftOuterArm: RiUser3Fill,
+      rightCalf: FaThumbsUp,
+      rightShin: FaThumbsUp,
+      rightFoot: FaThumbsUp,
+      rightThigh: RiUser3Fill,
+      leftCalf: FaHeart,
+      leftShin: FaHeart,
+      leftFoot: FaHeart,
+      leftThigh: RiUser3Fill,
+    }
+
+    return iconMap[bodyPart]
+  }
 
   useEffect(() => {
     // Call the provided onThresholdChange callback whenever the threshold prop changes
@@ -83,7 +131,7 @@ const BaseBodyPartLegend = ({ colorsOnScreen, scores, threshold, onThresholdChan
     <div className="flex flex-col text-center items-center">
       <p className="opacity-20 text-2xl">Confidence: ~{Confidence === 0 ? '<1' : Confidence}%</p>
       <h3 className="text-2xl font-bold opacity-50">Body Parts</h3>
-      <div className="font-[700] text-2xl drop-shadow-sm">{bodyPart}</div>
+      <div className="font-[700] text-xl drop-shadow-sm w-full whitespace-nowrap">{bodyPart}</div>
     </div>
   )
 }
