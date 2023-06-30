@@ -37,7 +37,7 @@ function CheckoutForm() {
 
   return (
     <form onSubmit={handleSubmit} className="h-screen flex flex-col items-center">
-      <div className="w-[90%] md:w-[960px] flex justify-center items-center flex-col bg-white shadow-md rounded-md mt-4 p-8">
+      <div className="w-[90%] md:w-[720px] flex justify-center items-center flex-col bg-white shadow-md rounded-md mt-4 p-8">
         <div className="border-b">
           <h2 className="text-3xl font-bold text-gray-700 pb-8 text-center italic">Stripe Secure Checkout</h2>
           <CardElement
