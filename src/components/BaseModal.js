@@ -114,7 +114,7 @@ export default function Example({ currentStep, setCurrentStep, modalOpen, setMod
                 )}
                 {currentStep === totalSteps && (
                   <Button variant="text" onClick={handleSkipToApp} className="text-lg">
-                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Go to App</span>
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Skip to App</span>
                   </Button>
                 )}
               </DialogFooter>
